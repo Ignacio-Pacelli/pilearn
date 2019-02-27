@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilearn</title>
+    <script src="js/modernizr-custom.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Assistant|Gloria+Hallelujah" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Assistant|Gloria+Hallelujah');
+    </style>
+    <link rel="stylesheet" href="css/icomoon.css" >
+    <link rel="stylesheet" href="css/design.css">
+
+
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <figure><img src="source/logoPilearn.png" alt=""></figure>
+            </a>
+            <a href="index.html">Aprende Español</a>
+        </h1>
+
+        <nav id="ioMenu">
+            <figure id="showMenu"class="ioMenuMovil" onclick="mostrarMenu()">
+            <img src="source/home-sketch.png" alt=""></figure>
+
+            <div id="cardMenu" style="display:none">
+                <figure id="hideMenu" class="ioMenuMovil" onclick="mostrarMenu()">
+                <img src="source/icon.png" alt=""></figure>
+                <figure id="logo_menu"><img src="source/logoPilearn.png"></figure>
+                <ul>
+                    <li><a onclick="navSection('home')" href="#">Home</a> </li>
+                    <li><a onclick="navSection('aboutme')" href="#">About me</a> </li>
+                    <li><a onclick="navSection('lessons')" href="#">Lessons</a> </li>
+                    <li><a onclick="navSection('price')" href="#">Price</a> </li>
+                    <li><a onclick="navSection('blog')" href='#'>Blog</a></li>
+                    <li><a  onclick="displayFormContact('block')" href='#'>Contact</a></li>
+
+                </ul>
+            </div>
+         </nav>
+
+        <div id="prev_section" onclick="displaySection('prev')"><img src="source/next.png" alt=""></div>
+        <div id="next_section" onclick="displaySection('next')"><img src="source/next.png" alt=""></div>
+
+
+    </header>
+
+    <div id="slider">
+        <section class="slide" id="home" style="display:block">
+            <div class="mainAnimation">
+
+            </div>
+
+            <div class="mainLogo">
+                <h2><strong>Aprende español </strong> <br>con</h2><figure><img src="source/logoPilearn.png" alt=""></figure>
+            </div>
+
+            <div class="buttonPage">
+                <div id="botonPrincipal" onclick="displayFormContact('block')">Contáctame</div>
+
+            </div>
+
+
+        </section>
+        <section class="slide" id="aboutme" style="display:none"></section>
+        <section class="slide" id="lessons" style="display:none"></section>
+        <section class="slide" id="price" style="display:none"></section>
+        <section class="slide" id="blog" style="display: none"></section>
+    </div>
+
+    <div id="contact">
+        <form action="contact.php" id="form" name="form" method="post">
+            <div id="close_form" onclick="displayFormContact('none')"><img src="iconos/cross.png"></div>
+            <figure id="logo_message"><img src="source/message.png"></figure>
+
+            <p>Say Hi!</p>
+
+            <input type="text" id="name" name="name" placeholder="Your name" />
+            <input type="text" id="email" name="email" placeholder="Your e-mail"  />
+            <textarea name="message" id="message" placeholder="Your message"  /></textarea>
+
+            <input type="submit" name="Submit" id="button" value="SEND" />
+        </form>
+    </div>
+
+
+    <footer>
+        <div class="rrss">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <p>© 2019 All right reserved | Privacy Policy</p>
+
+    </footer>
+
+
+
+    <script>
+        var sections = new Array(5);
+        sections[0] = "home";
+        sections[1] = "aboutme";
+        sections[2] = "lessons";
+        sections[3] = "price";
+        sections[4] = "blog";
+
+        alertSize();
+        function alertSize(){
+            var myWidth = 0, myHeight = 0;
+            if( typeof( window.innerWidth ) == 'number' ) {
+                //No-IE
+                myWidth = window.innerWidth;
+                myHeight = window.innerHeight;
+            } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                //IE 6+
+                myWidth = document.documentElement.clientWidth;
+                myHeight = document.documentElement.clientHeight;
+            } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                //IE 4 compatible
+                myWidth = document.body.clientWidth;
+                myHeight = document.body.clientHeight;
+            }
+            var display;
+            var cardMenu = document.getElementById("cardMenu");
+            display = cardMenu.style.display;
+            
+            if (myWidth < 767){
+                cardMenu.style.display = "none";
+
+            }
+            else{
+                cardMenu.style.display = "block";
+            }
+        }
+        function mostrarMenu() {
+            var display;
+            var cardMenu = document.getElementById("cardMenu");
+            display = cardMenu.style.display;
+            
+            if (display == "none"){
+                cardMenu.style.display = "block";
+
+            }
+            else{
+                cardMenu.style.display = "none";
+            }
+
+        }
+        function setColor(i) {
+            var search;
+            var bkgr_body;
+            var bkgr_menu;
+
+            if (sections[i] == "home") {
+                bkgr_body = "#233D58";
+                bkgr_menu = "#233D58";
+            } else {
+                bkgr_body = "#f1f1f1";
+                bkgr_menu = "#29abe2";
+            }
+            search = document.getElementById(sections[i]);
+            search.style.background = bkgr_body;
+            var menu = document.getElementsByTagName("header")[0];
+            menu.style.background = bkgr_menu;
+
+        }
+
+        function navSection(nav) {
+            var search;
+            var show;
+            var bkgr_body;
+            var bkgr_menu;
+
+            for (var i = 0; i < 5; i++) {
+                search = document.getElementById(sections[i]); /*guardamos el elemento*/
+                search.style.display = "none"; /*cada elemento que recorro pongo que NO se muestre*/
+
+                /*si la posicion que estoy recorriendo es exactamente igual al nav(ej:"home")lo activamos*/
+                if (sections[i] == nav) {
+                    search.style.display = "block";
+                    setColor(i);
+
+                }
+            }
+        }
+
+        function displaySection(nav) {
+
+            var search;
+            var show;
+
+            for (var i = 0; i < 5; i++) {
+                search = document.getElementById(sections[i]); /*guardamos el elemento*/
+                show = search.style.display; /*revisamos si esta activa o no*/
+
+                if (show == "block") {
+                    search.style.display = "none";
+                    if (nav == "next") {
+                        i++;
+                        if (i > 4) i = 0;
+                    }
+                    if (nav == "prev") {
+                        i--;
+                        if (i < 0) i = 4;
+                    }
+                    search = document.getElementById(sections[i]);
+                    search.style.display = "block";
+                    break;
+                }
+
+            }
+            setColor(i);
+        }
+
+        function displayFormContact(status){
+            var form = document.getElementById('contact'); /*<div id="contact"> (es ese contact)*/
+            form.style.display = status;
+
+        }
+
+    </script>
+
+
+</body>
+</html>

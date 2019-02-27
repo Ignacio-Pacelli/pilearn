@@ -1,0 +1,536 @@
+
+body{
+	font-size: 16px;
+	font-family: 'Gloria Hallelujah', sans-serif;
+	background: #233D58;
+	position: relative;
+
+}
+
+header{
+	width: 100%;
+	height: 35px;
+	background:#233D58;
+	position: relative;
+	z-index: 999;
+}
+
+header h1{	
+	display: none;
+
+}
+
+header #next_section,
+header #prev_section{
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 5px;
+	position: absolute;
+	top: 0px;
+}
+
+header #prev_section{
+	right: 35px;
+}
+header #next_section{
+	right: 5px;
+}
+
+header #next_section img,
+header #prev_section img{
+	width:100%;
+	top: 0px;
+	left: 0px;
+	position: relative;
+}
+
+header #prev_section img{
+	transform: rotate(180deg);
+}
+
+header nav .ioMenuMovil{
+	height: 25px;
+	width: 120px;
+	cursor: pointer;
+	line-height: 40px;
+	margin: 0px 0px 0px 10px;
+	padding-top: 5px;
+
+
+}
+header nav .ioMenuMovil img{
+	height: 100%;
+}
+
+header nav #cardMenu{
+	position: relative;
+	width: 230px;
+	background: white;
+	top: -30px;
+	left: 0px;
+	border-right: 3px solid #233D58;
+	border-bottom:  3px solid #233D58;
+	z-index: 999;
+	padding-bottom: 50px;
+}
+
+header nav #cardMenu #logo_menu{
+	height: 200px;
+	width: 80%;
+	margin: 30px 0px;
+	margin-left: 10%;
+	margin-bottom: 50px;
+ 
+}
+header nav #cardMenu #logo_menu img{
+	width: 100%;
+}
+header nav #cardMenu ul{
+	margin-top: -20px;
+}
+header nav #cardMenu ul li{
+	list-style: none;
+	font-size: 1.5em;
+	line-height: 37px;
+}
+header nav #cardMenu ul li a{
+	text-decoration: none;
+	color: black;
+
+
+}
+
+#slider{
+	width: 100%;
+	height: 600px;
+	position: relative;
+
+}
+
+#slider section.slide{
+	position: absolute;
+	width: 100%;
+	top: -17px;
+	left: 0px;
+}
+
+#slider #home {
+	background: #233D58;
+	font-family: "Apple SD Gothic Neo";
+	position: relative;
+	text-align: center;
+	padding-bottom: 50px;
+}
+#slider #home .mainAnimation{
+
+	width: 80%;
+	margin-left: 10%;
+	min-height: 300px;
+	position: absolute;
+
+}
+
+
+#slider #home .mainLogo{
+	background: none;
+	position: relative;
+	width: 60vw;
+	margin-left: 20vw;
+	height: 430px;
+}
+#slider #home .mainLogo h2{
+	font-size: 1.5em;
+	padding-top: 80px;
+	color: white;
+	font-weight: lighter;
+	display: block;
+
+}
+#slider #home .mainLogo figure img{
+	width: 100%;
+}
+#slider #home .buttonPage {
+	width: 100%;
+	text-align: center; /* no haria falta, lo hereda del section*/
+
+}
+#slider #home .buttonPage > *{
+	display: inline-block;
+
+	width: 40%;
+	margin: 5px 2.5%;
+	font-size: 1.6em;
+	color: white;
+	padding: 15px 2.5%;
+
+}
+#slider #home .buttonPage #botonPrincipal{
+	font-family: 'Amatic SC', sans-serif;
+	background: #F8931F;
+	cursor: pointer;
+	display: inline-block;
+}
+
+
+#slider #aboutme{
+	height: 400px;
+	background: yellow;
+}
+
+#slider #lessons{
+	height: 300px;
+	background: red;
+}
+
+#slider #price{
+	height: 200px;
+	background: blue;
+}
+
+#slider #blog{
+	height: 100px;
+
+
+}
+
+
+#contact{
+	position: absolute;
+	right: 0px;
+	top: 35px;
+	background: white;
+	width: 250px;
+
+	border-top: 1px solid black;
+	box-shadow: 0px 0px 3px #233D58;
+	font-family: 'Amatic SC', sans-serif;
+	height: 100vh;
+	z-index: 999;
+	display: none;
+}
+
+#contact #close_form{
+	position: relative;
+	width: 30px;
+	height: 30px;
+	left: 85%;
+	top: 190px;
+}
+
+#contact #close_form:hover{
+	cursor: pointer;
+
+}
+#contact #close_form:before{
+	position: center;
+
+}
+#contact #close_form img{
+	width: 20px;
+	margin-top: -50px;
+	margin-bottom: 20px;
+
+}
+#contact figure{
+	height: 150px;
+	width: 100%;
+	margin: 0px;
+	margin-top: -31px;
+	padding: 0px;
+	text-align: center;
+	background: #29abe2;
+}
+#contact figure img{
+	height: 100%;
+	margin: 0px;
+}
+
+#contact p{
+	margin: 20px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+#contact input,
+#contact textarea{
+	display: block;
+	margin: 20px;
+	border: none;
+	border-bottom: 2px solid gray;
+	width: 90%;
+	margin-left: 5%;
+	padding-bottom: 3px;
+	margin-bottom: 50px;
+	font-weight: bold;
+
+}
+#contact #button{
+	background: #F8931F;
+	color: white;
+	border: none;
+	padding: 8px 0px;
+	border-radius: 5px; /*poner boton redondo*/
+    bottom: 0px;
+}
+
+footer{
+	width: 100%;
+	background: black;
+	color: white;
+	text-align: center;
+	z-index: 90;
+	height: 150px;
+	position: fixed;
+	bottom: -130px;
+	transition-duration: 0.4s;
+
+}
+
+footer:hover{
+	bottom: 0px;
+
+}
+
+footer:after{
+    content: "\e96c";
+    font-family: icomoon;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;/*para que se quede en el centro hay que ponerle la mitad de 80*/
+    background: #F8931F;
+    margin-top: -40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2em;
+    transition-duration: 0.4s;
+
+}
+
+footer:hover:after{
+    background: white;
+    color: black;
+
+
+}
+
+footer .rrss{
+	margin-top: 70px;
+	width: 100%;
+	height: 40px;
+
+
+}
+footer p{
+	font-size: 0.8em;
+	font-weight: lighter;
+
+
+}
+footer .rrss a{
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	position: relative;
+
+}
+footer .rrss a:before{
+	text-decoration: none;
+	position: absolute;
+	font-size: 1.7em;
+	top: 5px;
+	left: 5px;
+	font-family: icomoon;
+	color: white;
+
+
+
+}
+footer .rrss a:nth-child(1):before{
+
+	content: "\ea90";
+}
+footer .rrss a:nth-child(2):before{
+
+	content: "\ea92";
+}
+footer .rrss a:nth-child(3):before{
+
+	content: "\ea96";
+}
+footer .rrss a:nth-child(4):before{
+
+	content: "\eaca";
+}
+
+
+
+
+@media screen and (min-width: 480px){
+	#slider #home .mainLogo{
+		width: 270px;
+		left: 50%;
+		margin-left: -135px; /*es la mitad de 270, se hace para centrarlo*/
+
+	}
+	#slider #home .mainLogo h2{
+		font-size: 2em;
+
+	}
+	#slider #home .mainLogo figure{
+		width: 80%;
+		margin-left: 10%;
+	}
+	#slider #home .buttonPage > *{
+		width: 200px; /* para que el letrero no se agrande cuando ampliamos la pagina*/
+
+
+	}
+}
+@media screen and (min-width: 600px){
+	body{
+		background: orange;
+	}
+}
+
+@media screen and (min-width: 767px){
+	body{
+		background: yellow;
+
+	}
+	header{
+		height: 50px;
+
+	}
+	header h1{
+		display: inline-block;
+		width: 20%;
+		margin: 0px;
+		height: 50px;
+		margin-left: 80px;
+		line-height:50px;
+		min-width: 200px;
+
+		
+	}
+	header h1 > *{
+		display: inline-block;
+		vertical-align: middle;
+		text-decoration: none;
+		color: white;
+		font-weight: lighter;
+		font-size: 0.5em;
+		margin: 0px 3px;
+
+	}
+	header h1 figure{
+		height: 40px;
+		width: 40px;
+		margin: 0px;
+
+
+	}
+	header h1 figure img{
+		width: 100%;
+	}
+
+
+	header nav{
+		display: inline-block;
+		vertical-align: middle;
+		height: 62%;
+		position: relative;
+
+	}
+	
+	header nav #showMenu,
+	header nav #hideMenu{
+		display: none;
+	}
+
+	header nav #cardMenu{
+		display: inline-block;
+		border: none;
+		background: none;
+		position: relative;
+		top: 0px;
+		width: 100%;
+		text-align: right;
+		padding-bottom: 0px;
+	}
+	
+	header nav #cardMenu figure{
+		display: none;
+
+	}
+	
+	header nav #cardMenu ul{
+		padding: 0px;
+		margin: 0px;
+		margin-top: -15px;
+		
+	}
+	
+	header nav #cardMenu ul li{
+		font-family: 'Amatic SC', sans-serif;
+		display: inline-block;
+		width: 75px;
+		text-align: center;
+		font-size: 1.2em;
+		margin: 0px -2px;
+
+	}
+	header nav #cardMenu ul li a{
+		color: white;
+
+
+	}
+	
+	header #next_section,
+	header #prev_section{
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		background: #29abe2;
+		right: 40px;
+		z-index: 999; 
+		border-radius: 50%;
+
+	}
+	header #prev_section{
+		top: 160px;
+	}
+	header #next_section{
+		top: 230px;
+	}
+	header #next_section img{
+
+		width: 50%;
+		top: 10px;
+		left: 15px
+	}
+	header #prev_section img{
+
+		width: 50%;
+		top: 10px;
+		left: 10px
+		
+	}
+	#contact{
+		top: 50px;
+		width: 380px;
+	}
+
+
+	
+}
+
+@media screen and (min-width: 950px){
+	body{
+		background: green;
+	}
+}
